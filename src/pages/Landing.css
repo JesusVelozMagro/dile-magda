@@ -1,0 +1,155 @@
+
+
+
+.video-background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+  object-position: center 82%;
+
+}
+.video-cover {
+  position: absolute;
+  /* top: 30px; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Negro semitransparente */
+  z-index: 3;
+}
+.video-container {
+  position: relative; /* Esto sí */
+  /* top: 30px; */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* 🧠 El video debe estar DETRÁS de todo */
+  /* overflow: hidden; */
+  /* border: solid 10px red; */
+}
+
+.typing-container{
+  width: 45%;
+  /* border: 5px solid red; */
+  z-index: 999;
+  /* top: 30vh; */
+  position: absolute;
+  top: 30vh;
+  left: 4%;
+
+}
+
+.typing-text {
+
+  position: relative;
+  font-size: clamp(1.5rem, 4vw, 8rem);
+  font-weight: bold;
+  color: #ed1968;
+  font-weight: bolder;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  border-right: 2px solid white; /* Efecto de cursor */
+  animation: blink-caret 0.75s step-end infinite;
+
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* 🧠 Float UP by 20px */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+.Magda-container {
+
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.circulo-1,
+.circulo-2,
+.circulo-3 {
+  position: absolute;
+  width: clamp(30px, 8vw, 80px);
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.8;
+  
+}
+
+.circulo-1 {
+  top: -20px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circulo-2 {
+  top: 50%;
+  left: -30px;
+  animation-delay: 2s;
+}
+
+.circulo-3 {
+  bottom: -20px;
+  right: 10%;
+  animation-delay: 4s;
+}
+.Magda {
+  position: absolute;
+  top: 28vh; /* 🎯 Move manually UP or DOWN */
+  left: 65%;
+  width: clamp(90px, 16vw, 400px);
+  height: auto;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+
+
+
+/* For tablets Verical */
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 700px) {
+  .typing-text {
+    font-size: clamp(2.5rem, 8vw, 7rem); /* 🚀 Boost font size */
+    
+  }
+  
+
+  .video-background {
+    object-position: center 22%;
+  }
+}
+
+/* For phones */
+@media (max-width: 767px) {
+  .typing-text {
+    font-size: clamp(1.5rem, 6vh, 2.5rem);
+  }
+
+  .typing-container{
+    top: 35%;
+    left: 6%;
+  }
+  .Magda {
+    /* position: absolute;
+    top: 135%;
+    left: 25%;
+    width: clamp(170px, 22vw, 600px);
+    height: auto;
+    z-index: 3; */
+    display: none;
+  }
+
+}

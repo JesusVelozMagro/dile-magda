@@ -1,0 +1,84 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  z-index: 9999;
+  position: sticky;
+  background: linear-gradient(135deg, #02abae 0%, #00a0a4 50%, #02979a 100%);
+  top: 0; 
+
+}
+
+.logo {
+  /* font-size: 1.5rem; */
+  font-weight: bold;
+  color: white;
+  width: clamp(120px, 7vw, 250px);
+  height: auto;
+  /* object-fit: contain; */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+  color: #ed1968;
+  
+}
+
+/* Burger button */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  transition: all 0.7s ease;
+
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.7s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+   background: linear-gradient(135deg, #02abae 0%, #00a0a4 50%, #02979a 100%);
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

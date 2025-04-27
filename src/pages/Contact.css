@@ -1,0 +1,166 @@
+.contact-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+/* 
+  top: 10%;
+  left: -4%; */
+  
+  
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #02abae 0%, #00a0a4 50%, #02979a 100%);
+  color: black;
+  border: none;
+  cursor: pointer;
+  /* font-weight: bolder; */
+  font-size: clamp(15px,2vw,20px);
+  transition: transform 2s ease;
+  border-radius: 8px;
+
+}
+
+.contact-form button:hover {
+  background: #ed1968;
+  transition: transform 0.3s ease;
+  color: #fff121;
+  
+}
+
+.status-message {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.contact-wrapper {
+  position: relative; /* Make it a positioned parent */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+}
+
+.contact-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Cover whole area without distortion */
+  z-index: 1;
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* Dark semi-transparent overlay */
+  z-index: 2;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Arrive at the final place */
+  }
+}
+
+
+
+
+.Title-container {
+  /* position: relative; */
+  display: flex;
+  top: -100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+
+  animation: slideInFromBottom 3s ease-out forwards; /* 🔥 */
+}
+.Title {
+  position: relative;
+  color: #ed1968;
+  font-size: clamp(1.7rem, 4vw, 3rem); 
+  display: inline;
+
+}
+
+.Title-highlight {
+  color: #fff121;
+  display: inline;
+}
+
+.input-field, .textarea-field {
+  padding: 0.75rem;
+  border: 2px solid #02abae;
+  border-radius: 4px;
+  font-size: 1rem;
+  /* opacity: 0.2; */
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, 
+  rgba(2, 171, 174, 0.2) 0%, 
+  rgba(0, 160, 164, 0.2) 50%, 
+  rgba(2, 151, 154, 0.2) 100%
+  
+);
+  color: aliceblue;
+  font-weight: 500;
+}
+
+.input-field:hover,
+.textarea-field:hover,
+.input-field:focus,
+.textarea-field:focus {
+  border: 1px solid #ed1968;
+  box-shadow:
+    0 0 6px #ed1968,
+    0 0 12px #ed1968,
+    0 0 24px #ed1968,
+    0 0 32px rgba(237, 25, 104, 0.4); /* lighter pink glow */
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.003); /* subtle transparent highlight */
+  color: white;
+  font-weight: bold;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form, .contact-container, .whatever-your-form-is {
+  position: relative; /* Must be relative to sit above video + overlay */
+  z-index: 3;
+  animation: slideInFromBottom 1s ease-out 
+}
+
+/*Tablets Vertical*/
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 700px) {
+
+}
+
+/* For phones */
+@media (max-width: 767px) {
+
+  .contact-video-background {
+    object-position: 75% center;
+  }
+}

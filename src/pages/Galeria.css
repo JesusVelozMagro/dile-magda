@@ -1,0 +1,37 @@
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(1); /* scale 1 to not interfere */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* scale stays 1 */
+  }
+}
+
+ /* img {
+  transition: transform 0.3s ease;
+  transform: translateY(0) scale(1);
+  animation: slideInFromBottom 3s ease-out forwards; 
+} */
+
+/*img:hover {
+  transform: scale(1.35);
+  cursor: pointer;
+  border-radius: 20px;
+} */
+
+.enlarged {
+  transform: translateY(0) scale(1.2); /* Scale 2x bigger */
+  z-index: 10;
+  transition: transform 3s ease;
+  border-radius: 25px;
+}
+
+.Portada {
+  width: 100%;          /* Make it fill the container width */
+  height: auto;         /* Keep the aspect ratio */
+  max-width: 1800px;    /* Optional: don't let it get too big on huge screens */
+  display: block;       /* Remove default inline spacing */
+  margin: 0 auto;       /* Center it horizontally */
+}
