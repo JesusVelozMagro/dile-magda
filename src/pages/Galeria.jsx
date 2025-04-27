@@ -304,7 +304,7 @@
 //   );
 // }
 
-import Gallery from 'react-photo-gallery';
+// import Gallery from 'react-photo-gallery';
 import './Galeria.css';
 import {useState} from 'react';
 import AutoScroll from '../components/AutoScroll';
